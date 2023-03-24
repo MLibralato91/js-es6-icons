@@ -1,0 +1,17 @@
+main{
+    font-family: 'Roboto', sans-serif;
+}
+
+.changeType{
+    height: 60px;
+    background-color: rgb(70, 115, 229);
+}
+
+header{
+    color: rgb(70, 115, 229);
+    height: 110px;
+}
+main{
+    height:calc(100vh - 110px);
+    background-color: rgb(242, 235, 235);
+}
