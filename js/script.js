@@ -142,3 +142,47 @@ const icons = [
     }
 ];
 
+const card = document.querySelector('.row');
+
+function createCards(obj) {
+
+    //creo la colonna
+    let myCol = document.createElement('div');
+    myCol.className = 'card col-2 card text-center p-2';
+
+    let cardBox = document.createElement('div');
+    cardBox.className = 'cardBox';
+
+    // Creo l'immagine con Fontawsome
+    let img = document.createElement('i');
+    img.className = obj.prefix + obj.family + ' ' + obj.prefix + obj.name;
+
+    //creo la card body
+    let cardBody = document.createElement('div');
+    cardBody.className = 'card-body';
+    
+    //creo il titolo della card con dentro il nome dell'utente
+    let titleName = document.createElement('h5')
+    titleName.className = 'card-title text-uppercase';
+    titleName.textContent = obj.name;
+   
+    
+    card.append(myCol);
+
+    myCol.append(cardBox);
+
+    cardBox.append(img, cardBody);
+
+    cardBody.append(titleName);
+
+    
+
+}
+
+
+for (let i = 0; i < icons.length; i++) {
+    const icon = icons[i];
+    
+    createCards(icon);
+}
+
