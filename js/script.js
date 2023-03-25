@@ -151,7 +151,7 @@ function createCards(obj) {
     myCol.className = 'card col-2 card text-center p-2';
 
     let cardBox = document.createElement('div');
-    cardBox.className = 'cardBox';
+    cardBox.className = 'cardBox' + ' ' + obj.color;
 
     // Creo l'immagine con Fontawsome
     let img = document.createElement('i');
@@ -175,7 +175,7 @@ function createCards(obj) {
 
     cardBody.append(titleName);
 
-    
+  
 
 }
 
