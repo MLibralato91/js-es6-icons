@@ -175,14 +175,41 @@ function createCards(obj) {
 
     cardBody.append(titleName);
 
-  
-
 }
 
 
-for (let i = 0; i < icons.length; i++) {
-    const icon = icons[i];
+// for (let i = 0; i < icons.length; i++) {
+//     const icon = icons[i];
     
-    createCards(icon);
-}
+//     createCards(icon);
+// }
 
+
+const animalGroup = icons.filter((element) =>{
+    if(element.type === 'animal'){
+        return true;
+    }else{
+        return false;
+    }
+})
+
+
+
+const vegetableGroup = icons.filter((element) =>{
+    if(element.type === 'vegetable'){
+        return true;
+    }else{
+        return false;
+    }
+})
+const userGroup = icons.filter((element) =>{
+    if(element.type === 'user'){
+        return true;
+    }else{
+        return false;
+    }
+})
+
+animalGroup.forEach((element) =>{
+    createCards(element)
+})
