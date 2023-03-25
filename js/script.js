@@ -178,38 +178,30 @@ function createCards(obj) {
 }
 
 
-// for (let i = 0; i < icons.length; i++) {
-//     const icon = icons[i];
+
+function drowAll(selectedValue) {
+    document.querySelector('.row').innerHTML = '';
+    const filteredGroup = icons.filter((element) =>{
+        if(element.type === selectedValue || selectedValue === 'all'){
+            return true;
+        }else{
+            return false;
+        }
+    });
     
-//     createCards(icon);
-// }
+    filteredGroup.forEach((element) => {
+        createCards(element)
+    })
+}
 
-
-const animalGroup = icons.filter((element) =>{
-    if(element.type === 'animal'){
-        return true;
-    }else{
-        return false;
-    }
-})
+function selectGroup() {
+    drowAll(this.value);
+    
+}
 
 
 
-const vegetableGroup = icons.filter((element) =>{
-    if(element.type === 'vegetable'){
-        return true;
-    }else{
-        return false;
-    }
-})
-const userGroup = icons.filter((element) =>{
-    if(element.type === 'user'){
-        return true;
-    }else{
-        return false;
-    }
-})
+const select = document.querySelector('select');
+select.addEventListener('change', selectGroup);
 
-animalGroup.forEach((element) =>{
-    createCards(element)
-})
+drowAll(select.value);
