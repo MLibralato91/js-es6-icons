@@ -142,10 +142,11 @@ const icons = [
     }
 ];
 
-const card = document.querySelector('.row');
+
 
 function createCards(obj) {
 
+    const card = document.querySelector('.row');
     //creo la colonna
     let myCol = document.createElement('div');
     myCol.className = 'card col-2 card text-center p-2';
@@ -181,8 +182,8 @@ function createCards(obj) {
 
 function drowAll(selectedValue) {
     document.querySelector('.row').innerHTML = '';
-    const filteredGroup = icons.filter((element) =>{
-        if(element.type === selectedValue || selectedValue === 'all'){
+    const filteredGroup = icons.filter((icon) =>{
+        if(icon.type === selectedValue || selectedValue === 'all'){
             return true;
         }else{
             return false;
